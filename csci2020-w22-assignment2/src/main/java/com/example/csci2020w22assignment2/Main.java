@@ -28,6 +28,7 @@ public class Main extends Application {
         String line = "";
         List<flightRecord> records = new ArrayList<>();
 
+        //Part 1
         try {
             // Reading CSV File and getting data
             reader = new BufferedReader(new FileReader(file));
@@ -35,6 +36,7 @@ public class Main extends Application {
             while((line =  reader.readLine()) != null){
                 String[] row = line.split(",");
 
+                //Storing the data
                 String al = row[0];
                 double a = Double.parseDouble(row[1]);
                 int i_85_99 = Integer.parseInt(row[2]);
@@ -51,8 +53,8 @@ public class Main extends Application {
                 records.add(record);
 
                 //FOR TESTING; delete before submission
-                System.out.println(record);
-                System.out.println();
+//                System.out.println(record);
+//                System.out.println();
 //                for (String index : row){
 //                    System.out.printf("%-10s", index);
 //                }
@@ -69,6 +71,11 @@ public class Main extends Application {
            } catch (IOException e) {
                e.printStackTrace();
            }
+        }
+
+        //Part 2
+        for (flightRecord record:records) {
+
         }
     }
 }
