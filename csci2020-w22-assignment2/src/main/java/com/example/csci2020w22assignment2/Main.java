@@ -73,9 +73,54 @@ public class Main extends Application {
            }
         }
 
-        //Part 2
+        //Part 2 (commented out code are so u can see tha values)
+        List<Double> avails = new ArrayList<Double>();
+
+        List<Integer> incidents8599 = new ArrayList<Integer>();
+        List<Integer> f_accidents8599 = new ArrayList<Integer>();
+        List<Integer> fatalities8599 = new ArrayList<Integer>();
+
+        List<Integer> incidents0014 = new ArrayList<Integer>();
+        List<Integer> f_accidents0014 = new ArrayList<Integer>();
+        List<Integer> fatalities0014 = new ArrayList<Integer>();
+
+        List<Integer> total8514 = new ArrayList<Integer>();
+
         for (flightRecord record:records) {
+            avails.add(record.getAvail());
+            incidents8599.add(record.getIncidents_85_99());
+            f_accidents8599.add(record.getFatal_accidents_85_99());
+            fatalities8599.add(record.getFatalities_85_99());
+
+            incidents0014.add(record.getIncidents_00_14());
+            f_accidents0014.add(record.getFatal_accidents_00_14());
+            fatalities0014.add(record.getFatalities_00_14());
+
+            total8514.add(record.getTotal_incidents_85_14());
+            //System.out.println(record.getTotal_incidents_85_14());
 
         }
+
+        Statistics col1 = new Statistics(avails, "double");
+        //System.out.println("Avails = " + col1);
+
+        Statistics col2 = new Statistics(incidents8599);
+        //System.out.println("Incidents 85-99 = " + col2);
+        Statistics col3 = new Statistics(f_accidents8599);
+        //System.out.println("Fatal accidents 85-99 = " + col3);
+        Statistics col4 = new Statistics(fatalities8599);
+        //System.out.println("Fatalities 85-99 = " + col4);
+
+        Statistics col5 = new Statistics(incidents0014);
+        //System.out.println("Incidents 00-14 = " + col5);
+        Statistics col6 = new Statistics(f_accidents0014);
+        //System.out.println("Fatal accidents 00-14 = " + col6);
+        Statistics col7 = new Statistics(fatalities0014);
+        //System.out.println("Fatalities 00-14 = " + col7);
+
+        Statistics totals = new Statistics(total8514);
+        //System.out.println("Total incidents 85-14 = " + totals);
+
+
     }
 }
